@@ -24,7 +24,7 @@ namespace MovementSystem
 
             base.Enter();
 
-            StopAnimation(stateMachine.Player.AnimationData.WalkParameterHash);
+            StartAnimation(stateMachine.Player.AnimationData.WalkParameterHash);
 
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.WeakForce;
         }
@@ -33,7 +33,7 @@ namespace MovementSystem
         {
             base.Exit();
 
-            StartAnimation(stateMachine.Player.AnimationData.WalkParameterHash);
+            StopAnimation(stateMachine.Player.AnimationData.WalkParameterHash);
 
             SetBaseCameraRecenteringData();
         }

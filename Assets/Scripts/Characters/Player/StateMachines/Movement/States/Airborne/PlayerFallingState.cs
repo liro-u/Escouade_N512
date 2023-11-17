@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace MovementSystem
 {
@@ -20,6 +21,11 @@ namespace MovementSystem
         public override void Enter()
         {
             base.Enter();
+
+            if (IsGrounded())
+            {
+                OnContactWithGround(stateMachine.ReusableData.GroundedColliders[0]);
+            }
 
             StartAnimation(stateMachine.Player.AnimationData.FallParameterHash);
 
@@ -87,6 +93,19 @@ namespace MovementSystem
         protected override void ResetSprintState()
         {
         }
+        #endregion
+
+        #region Input Methods
+        protected override void OnJumpStarted(InputAction.CallbackContext context)
+        {
+            base.OnJumpStarted(context);
+
+            if (Time.time - stateMachine.ReusableData.LastTimeLeavingGround < stateMachine.Player.Data.AirborneData.JumpData.coyoteTime)
+            {
+                stateMachine.ChangeState(stateMachine.JumpingState);
+            }
+        }
+
         #endregion
     }
 }

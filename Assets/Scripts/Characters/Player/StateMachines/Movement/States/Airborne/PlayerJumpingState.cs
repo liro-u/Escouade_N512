@@ -23,9 +23,15 @@ namespace MovementSystem
         {
             base.Enter();
 
+            stateMachine.ReusableData.LastTimePressingJump = null;
+
+            stateMachine.ReusableData.LastTimeLeavingGround = null;
+
             stateMachine.ReusableData.MovementSpeedModifier = 0f;
 
             stateMachine.ReusableData.MovementDecelerationForce = jumpData.DecelerationForce;
+
+            stateMachine.ReusableData.VerticalMovementDecelerationForceEnabled = false;
 
             shouldKeepRotating = stateMachine.ReusableData.MovementInput != Vector2.zero;
 
@@ -37,6 +43,8 @@ namespace MovementSystem
         public override void Exit()
         {
             base.Exit();
+
+            stateMachine.ReusableData.VerticalMovementDecelerationForceEnabled = true;
 
             SetBaseRotationData();
 
@@ -80,6 +88,20 @@ namespace MovementSystem
         protected override void ResetSprintState()
         {
         }
+
+        protected override void AddInputActionsCallbacks()
+        {
+            base.AddInputActionsCallbacks();
+
+            stateMachine.Player.Input.PlayerActions.Jump.canceled += OnJumpCanceled;
+        }
+
+        protected override void RemoveInputActionsCallbacks()
+        {
+            base.RemoveInputActionsCallbacks();
+
+            stateMachine.Player.Input.PlayerActions.Jump.canceled -= OnJumpCanceled;
+        }
         #endregion
 
         #region Main Methods
@@ -110,10 +132,12 @@ namespace MovementSystem
 
                 if (IsMovingUp())
                 {
-                    float forceModifier = jumpData.JumpForceModifierOnSlopeUpwards.Evaluate(groundAngle);
+                    float horizontalForceModifier = jumpData.HorizontalJumpForceModifierOnSlopeUpwards.Evaluate(groundAngle);
+                    float verticalForceModifier = jumpData.VerticalJumpForceModifierOnSlopeUpwards.Evaluate(groundAngle);
 
-                    jumpForce.x *= forceModifier;
-                    jumpForce.z *= forceModifier;
+                    jumpForce.x *= horizontalForceModifier;
+                    jumpForce.y *= verticalForceModifier;
+                    jumpForce.z *= horizontalForceModifier;
                 }
 
                 if (IsMovingDown())
@@ -131,8 +155,9 @@ namespace MovementSystem
         #endregion
 
         #region Input Methods
-        protected override void OnMovementCanceled(InputAction.CallbackContext context)
+        protected void OnJumpCanceled(InputAction.CallbackContext context)
         {
+            stateMachine.ReusableData.VerticalMovementDecelerationForceEnabled = true;
         }
         #endregion
     }

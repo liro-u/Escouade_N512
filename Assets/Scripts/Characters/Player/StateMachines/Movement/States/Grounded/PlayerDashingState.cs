@@ -137,7 +137,6 @@ namespace MovementSystem
         #endregion
 
         #region Input Methods
-
         protected override void OnDashStarted(InputAction.CallbackContext context)
         {
         }

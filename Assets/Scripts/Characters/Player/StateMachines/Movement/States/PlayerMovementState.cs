@@ -72,6 +72,11 @@ namespace MovementSystem
         {
             if (stateMachine.Player.LayerData.IsGroundLayer(collider.gameObject.layer))
             {
+                if (!stateMachine.ReusableData.GroundedColliders.Contains(collider))
+                {
+                    stateMachine.ReusableData.GroundedColliders.Add(collider);
+                }
+
                 OnContactWithGround(collider);
 
                 return;
@@ -82,6 +87,8 @@ namespace MovementSystem
         {
             if (stateMachine.Player.LayerData.IsGroundLayer(collider.gameObject.layer))
             {
+                stateMachine.ReusableData.GroundedColliders.Remove(collider);
+
                 OnContactWithGroundExited(collider);
 
                 return;
@@ -157,6 +164,11 @@ namespace MovementSystem
         #endregion
 
         #region Reusable Methods
+        protected bool IsGrounded()
+        {
+            return stateMachine.ReusableData.GroundedColliders.Count > 0;
+        }
+
         protected void StartAnimation(int animationHash)
         {
             stateMachine.Player.Animator.SetBool(animationHash, true);
@@ -289,7 +301,10 @@ namespace MovementSystem
         {
             Vector3 playerVerticalVelocity = GetPlayerVerticalVelocity();
 
-            stateMachine.Player.Rigidbody.AddForce(-playerVerticalVelocity * stateMachine.ReusableData.MovementDecelerationForce, ForceMode.Acceleration);
+            if (stateMachine.ReusableData.VerticalMovementDecelerationForceEnabled)
+            {
+                stateMachine.Player.Rigidbody.AddForce(-playerVerticalVelocity * stateMachine.ReusableData.MovementDecelerationForce, ForceMode.Acceleration);
+            }
         }
 
         protected bool IsMovingHorizontally(float minimumMagnitude = 0.1f)

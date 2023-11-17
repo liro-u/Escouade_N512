@@ -21,6 +21,8 @@ namespace MovementSystem
 
             StartAnimation(stateMachine.Player.AnimationData.HardLandParameterHash);
 
+            stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.StationaryForce;
+
             stateMachine.Player.Input.PlayerActions.Movement.Disable();
 
             ResetVelocity();

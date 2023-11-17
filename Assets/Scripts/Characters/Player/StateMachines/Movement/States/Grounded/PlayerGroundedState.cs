@@ -24,11 +24,18 @@ namespace MovementSystem
             UpdateShouldSprintState();
 
             UpdateCameraRecenteringState(stateMachine.ReusableData.MovementInput);
+
+            if (stateMachine.ReusableData.LastTimePressingJump.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingJump < stateMachine.Player.Data.AirborneData.JumpData.jumpBufferTime)
+            {
+                stateMachine.ChangeState(stateMachine.JumpingState);
+            }
         }
 
         public override void Exit()
         {
             base.Exit();
+
+            stateMachine.ReusableData.LastTimeLeavingGround = Time.time;
 
             StopAnimation(stateMachine.Player.AnimationData.GroundedParameterHash);
         }

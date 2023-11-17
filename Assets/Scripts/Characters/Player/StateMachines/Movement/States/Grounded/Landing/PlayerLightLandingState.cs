@@ -17,8 +17,6 @@ namespace MovementSystem
 
             base.Enter();
 
-            stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.StationaryForce;
-
             ResetVelocity();
         }
 

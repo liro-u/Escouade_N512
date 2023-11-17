@@ -10,9 +10,6 @@ namespace MovementSystem
     {
         private PlayerSprintData sprintData;
 
-        private float startTime;
-
-        private bool keepSprinting;
         private bool shouldResetSprintState;
 
         public PlayerSprintingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
@@ -33,7 +30,8 @@ namespace MovementSystem
 
             shouldResetSprintState = true;
 
-            startTime = Time.time;
+            stateMachine.ReusableData.ShouldSprint = true;
+
         }
 
         public override void Exit()
@@ -44,27 +42,8 @@ namespace MovementSystem
 
             if (shouldResetSprintState )
             {
-                keepSprinting = false;
-
                 stateMachine.ReusableData.ShouldSprint = false;
             }
-        }
-
-        public override void Update()
-        {
-            base.Update();
-
-            if (keepSprinting)
-            {
-                return;
-            }
-
-            if (Time.time < startTime + sprintData.SprintToRunTime)
-            {
-                return;
-            }
-
-            StopSprinting();
         }
         #endregion
 
@@ -73,7 +52,7 @@ namespace MovementSystem
         {
             if (stateMachine.ReusableData.MovementInput == Vector2.zero)
             {
-                stateMachine.ChangeState(stateMachine.IdlingState);
+                stateMachine.ChangeState(stateMachine.HardStoppingState);
 
                 return;
             }
@@ -84,20 +63,6 @@ namespace MovementSystem
         #endregion
 
         #region Reusable Methods
-        protected override void AddInputActionsCallbacks()
-        {
-            base.AddInputActionsCallbacks();
-
-            stateMachine.Player.Input.PlayerActions.Sprint.performed += OnSprintPerformed;
-        }
-
-        protected override void RemoveInputActionsCallbacks()
-        {
-            base.RemoveInputActionsCallbacks();
-
-            stateMachine.Player.Input.PlayerActions.Sprint.performed -= OnSprintPerformed;
-        }
-
         protected override void OnFall()
         {
             shouldResetSprintState = false;
@@ -107,13 +72,6 @@ namespace MovementSystem
         #endregion
 
         #region Input Methods
-        private void OnSprintPerformed(InputAction.CallbackContext context)
-        {
-            keepSprinting = true;
-
-            stateMachine.ReusableData.ShouldSprint = true;
-        }
-
         protected override void OnJumpStarted(InputAction.CallbackContext context)
         {
             shouldResetSprintState = false;

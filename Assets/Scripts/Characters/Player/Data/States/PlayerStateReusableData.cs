@@ -6,10 +6,18 @@ namespace MovementSystem
 {
     public class PlayerStateReusableData
     {
+        public List<Collider> GroundedColliders { get; set; } = new List<Collider>();
+
+        public float? LastTimeLeavingGround { get; set; } = null;
+        public float? LastTimePressingJump { get; set; } = null;
+        public float? LastTimePressingDash { get; set; } = null;
+
         public Vector2 MovementInput { get; set; }
         public float MovementSpeedModifier { get; set; } = 1f;
         public float MovementOnSlopeSpeedModifier { get; set; } = 1f;
         public float MovementDecelerationForce { get; set; } = 1f;
+
+        public bool VerticalMovementDecelerationForceEnabled { get; set; } = true;
 
         public List<PlayerCameraRecenteringData> BackwardsCameraRecenteringData { get; set; }
         public List<PlayerCameraRecenteringData> SidewaysCameraRecenteringData { get; set; }
