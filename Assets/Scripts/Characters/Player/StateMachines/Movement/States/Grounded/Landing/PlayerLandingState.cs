@@ -14,9 +14,9 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.LandingParameterHash);
+
+            base.Enter();
         }
 
         public override void Exit()

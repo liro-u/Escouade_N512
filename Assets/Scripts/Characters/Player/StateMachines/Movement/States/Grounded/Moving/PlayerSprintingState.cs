@@ -22,16 +22,15 @@ namespace MovementSystem
         {
             stateMachine.ReusableData.MovementSpeedModifier = sprintData.SpeedModifier;
 
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.SprintParameterHash);
+
+            base.Enter();
 
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.StrongForce;
 
             shouldResetSprintState = true;
 
             stateMachine.ReusableData.ShouldSprint = true;
-
         }
 
         public override void Exit()

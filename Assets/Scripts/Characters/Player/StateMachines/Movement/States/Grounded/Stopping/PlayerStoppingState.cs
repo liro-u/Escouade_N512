@@ -19,9 +19,9 @@ namespace MovementSystem
 
             SetBaseCameraRecenteringData();
 
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.StoppingParameterHash);
+
+            base.Enter();
         }
 
         public override void Exit()

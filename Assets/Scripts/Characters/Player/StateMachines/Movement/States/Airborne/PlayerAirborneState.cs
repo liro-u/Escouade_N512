@@ -15,9 +15,9 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.AirborneParameterHash);
+
+            base.Enter();
 
             ResetSprintState();
         }

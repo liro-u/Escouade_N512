@@ -26,13 +26,15 @@ namespace MovementSystem
         {
             stateMachine.ReusableData.MovementSpeedModifier = dashData.SpeedModifier;
 
-            base.Enter();
+            ResetAnimation(stateMachine.Player.AnimationData.DashAnimationHash);
 
             StartAnimation(stateMachine.Player.AnimationData.DashParameterHash);
 
+            base.Enter();
+
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.StrongForce;
 
-            stateMachine.ReusableData.RotationData = dashData.RotationData;
+            SetRotationData(dashData.RotationData);
 
             Dash();
 
@@ -121,6 +123,10 @@ namespace MovementSystem
         #endregion
 
         #region Reusable Methods
+        protected override void ChangeToDash()
+        {
+        }
+
         protected override void AddInputActionsCallbacks()
         {
             base.AddInputActionsCallbacks();
@@ -139,6 +145,7 @@ namespace MovementSystem
         #region Input Methods
         protected override void OnDashStarted(InputAction.CallbackContext context)
         {
+            stateMachine.ReusableData.LastTimePressingDash = Time.time;
         }
 
         private void OnMovementPerformed(InputAction.CallbackContext context)

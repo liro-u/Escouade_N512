@@ -20,9 +20,9 @@ namespace MovementSystem
 
             stateMachine.ReusableData.BackwardsCameraRecenteringData = idleData.BackwardsCameraRecenteringData;
 
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.IdleParameterHash);
+
+            base.Enter();
 
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.StationaryForce;
 

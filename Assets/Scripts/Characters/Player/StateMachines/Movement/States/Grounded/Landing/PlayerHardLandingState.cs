@@ -15,11 +15,11 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
+            StartAnimation(stateMachine.Player.AnimationData.HardLandParameterHash);
+
             stateMachine.ReusableData.MovementSpeedModifier = 0f;
 
             base.Enter();
-
-            StartAnimation(stateMachine.Player.AnimationData.HardLandParameterHash);
 
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.StationaryForce;
 

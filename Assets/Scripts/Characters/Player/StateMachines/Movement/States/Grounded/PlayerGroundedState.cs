@@ -17,9 +17,9 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.GroundedParameterHash);
+
+            base.Enter();
 
             UpdateShouldSprintState();
 
@@ -28,6 +28,11 @@ namespace MovementSystem
             if (stateMachine.ReusableData.LastTimePressingJump.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingJump < stateMachine.Player.Data.AirborneData.JumpData.jumpBufferTime)
             {
                 stateMachine.ChangeState(stateMachine.JumpingState);
+            }
+
+            if (stateMachine.ReusableData.LastTimePressingDash.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingDash < stateMachine.Player.Data.GroundedData.DashData.dashBufferTime)
+            {
+                ChangeToDash();
             }
         }
 
@@ -126,6 +131,11 @@ namespace MovementSystem
         #endregion
 
         #region Reusable Methods
+        protected virtual void ChangeToDash()
+        {
+            stateMachine.ChangeState(stateMachine.DashingState);
+        }
+
         protected override void AddInputActionsCallbacks()
         {
             base.AddInputActionsCallbacks();
@@ -191,7 +201,7 @@ namespace MovementSystem
         #region Input Methods
         protected virtual void OnDashStarted(InputAction.CallbackContext context)
         {
-            stateMachine.ChangeState(stateMachine.DashingState);
+            ChangeToDash();
         }
 
         protected virtual void OnJumpStarted(InputAction.CallbackContext context)

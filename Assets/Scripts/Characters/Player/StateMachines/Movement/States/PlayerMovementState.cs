@@ -26,6 +26,8 @@ namespace MovementSystem
 
         private void InitializeData()
         {
+            SetBaseCameraRecenteringData();
+
             SetBaseRotationData();
         }
 
@@ -167,6 +169,11 @@ namespace MovementSystem
         protected bool IsGrounded()
         {
             return stateMachine.ReusableData.GroundedColliders.Count > 0;
+        }
+
+        protected void ResetAnimation(int animationHash)
+        {
+            stateMachine.Player.Animator.Play(animationHash, -1, 0f);
         }
 
         protected void StartAnimation(int animationHash)
@@ -326,11 +333,16 @@ namespace MovementSystem
             return GetPlayerVerticalVelocity().y < -minimumVelocity;
         }
 
-        protected void SetBaseRotationData()
+        protected void SetRotationData(PlayerRotationData rotationData)
         {
-            stateMachine.ReusableData.RotationData = movementData.BaseRotationData;
+            stateMachine.ReusableData.RotationData = rotationData;
 
             stateMachine.ReusableData.TimeToReachTargetRotation = stateMachine.ReusableData.RotationData.TargetRotationReachTime;
+        }
+
+        protected void SetBaseRotationData()
+        {
+            SetRotationData(movementData.BaseRotationData);
         }
 
         protected virtual void OnContactWithGround(Collider collider)

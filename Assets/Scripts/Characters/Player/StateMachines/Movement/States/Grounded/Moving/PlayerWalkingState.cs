@@ -22,9 +22,9 @@ namespace MovementSystem
 
             stateMachine.ReusableData.BackwardsCameraRecenteringData = walkData.BackwardsCameraRecenteringData;
 
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.WalkParameterHash);
+
+            base.Enter();
 
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.WeakForce;
         }

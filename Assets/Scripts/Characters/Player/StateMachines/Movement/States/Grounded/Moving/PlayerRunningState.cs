@@ -22,9 +22,9 @@ namespace MovementSystem
         {
             stateMachine.ReusableData.MovementSpeedModifier = movementData.RunData.SpeedModifier;
 
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.RunParameterHash);
+
+            base.Enter();
 
             stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpData.MediumForce;
 

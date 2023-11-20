@@ -16,9 +16,9 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.HardStopParameterHash);
+
+            base.Enter();
 
             stateMachine.ReusableData.MovementDecelerationForce = HardStopData.DecelerationForce;
 

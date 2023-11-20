@@ -20,14 +20,14 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
+            StartAnimation(stateMachine.Player.AnimationData.FallParameterHash);
+
             base.Enter();
 
             if (IsGrounded())
             {
                 OnContactWithGround(stateMachine.ReusableData.GroundedColliders[0]);
             }
-
-            StartAnimation(stateMachine.Player.AnimationData.FallParameterHash);
 
             playerPositionOnEnter = stateMachine.Player.transform.position;
 

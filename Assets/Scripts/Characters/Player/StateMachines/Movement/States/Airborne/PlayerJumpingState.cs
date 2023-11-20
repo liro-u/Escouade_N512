@@ -35,7 +35,7 @@ namespace MovementSystem
 
             shouldKeepRotating = stateMachine.ReusableData.MovementInput != Vector2.zero;
 
-            stateMachine.ReusableData.RotationData = jumpData.RotationData;
+            SetRotationData(jumpData.RotationData);
 
             Jump();
         }

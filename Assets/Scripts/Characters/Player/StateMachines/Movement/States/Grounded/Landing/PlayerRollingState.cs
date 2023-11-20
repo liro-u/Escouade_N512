@@ -19,9 +19,9 @@ namespace MovementSystem
         {
             stateMachine.ReusableData.MovementSpeedModifier = rollData.SpeedModifier;
 
-            base.Enter();
-
             StartAnimation(stateMachine.Player.AnimationData.RollParameterHash);
+
+            base.Enter();
 
             stateMachine.ReusableData.ShouldSprint = false;
         }

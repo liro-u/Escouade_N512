@@ -29,6 +29,9 @@ namespace MovementSystem
         [Header("Airborne Parameter Names")]
         [SerializeField] private string fallParameterName = "isFalling";
 
+        [Header("Grounded Animation Names")]
+        [SerializeField] private string dashAnimationName = "Grounded.Dash";
+
         public int GroundedParameterHash { get; private set; }
         public int MovingParameterHash { get; private set; }
         public int StoppingParameterHash { get; private set; }
@@ -46,6 +49,8 @@ namespace MovementSystem
         public int HardLandParameterHash { get; private set; }
 
         public int FallParameterHash { get; private set; }
+
+        public int DashAnimationHash { get; private set; }
 
         public void Initialize()
         {
@@ -66,6 +71,8 @@ namespace MovementSystem
             HardLandParameterHash = Animator.StringToHash(hardLandParameterName);
 
             FallParameterHash = Animator.StringToHash(fallParameterName);
+
+            DashAnimationHash = Animator.StringToHash(dashAnimationName);
         }
     }
 }
