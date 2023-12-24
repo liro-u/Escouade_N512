@@ -17,8 +17,8 @@ namespace MovementSystem
         {
             stateMachine = playerMovementStateMachine;
 
-            movementData = stateMachine.Player.Data.GroundedData;
-            airborneData = stateMachine.Player.Data.AirborneData;
+            movementData = stateMachine.Player.MovementData.GroundedData;
+            airborneData = stateMachine.Player.MovementData.AirborneData;
             SetBaseCameraRecenteringData();
 
             InitializeData();

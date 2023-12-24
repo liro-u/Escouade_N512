@@ -58,68 +58,84 @@
     <Analyzer Include="H:\program\unity\Unity\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\PlayerStateReusableData.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\PlayerGroundedState.cs" />
     <Compile Include="Assets\Scripts\Data\Colliders\SlopeData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Utilities\Colliders\PlayerCapsuleColliderUtility.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Moving\PlayerWalkData.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Landing\PlayerRollData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\PlayerIdleData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Landing\PlayerLightLandingState.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Stopping\PlayerMediumStopData.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Stopping\PlayerLightStoppingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Airborne\PlayerFallingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\Layers\PlayerLayerData.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Airborne\PlayerFallData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Moving\PlayerMovingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Airborne\PlayerAirborneState.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\PlayerDashData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\PlayerIdlingState.cs" />
     <Compile Include="Assets\InputActions\Characters\Player\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\PlayerRotationData.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\IState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Airborne\PlayerJumpData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\PlayerGroundedData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Utilities\Cameras\PlayerCameraUtility.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Stopping\PlayerLightStopData.cs" />
-    <Compile Include="Assets\Scripts\Data\Colliders\CapsuleColliderData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Stopping\PlayerHardStoppingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Moving\PlayerSprintingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Landing\PlayerRollingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\ScriptableObjects\PlayerSO.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Moving\PlayerRunningState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Airborne\PlayerJumpingState.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Utilities\Animations\PlayerAnimationEventTrigger.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\Cameras\PlayerCameraRecenteringData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Stopping\PlayerMediumStoppingState.cs" />
-    <Compile Include="Assets\Scripts\Data\Colliders\DefaultColliderData.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraZoom.cs" />
+    <Compile Include="Assets\Scripts\VRM\EyeBlinker.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\PlayerMovementStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Moving\PlayerRunData.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Data\Colliders\PlayerTriggerColliderData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Stopping\PlayerHardStopData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Stopping\PlayerStoppingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Landing\PlayerHardLandingState.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Utilities\Input\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\PlayerMovementState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Landing\PlayerLandingState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Moving\PlayerWalkingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\Animations\PlayerAnimationData.cs" />
     <Compile Include="Assets\Scripts\Utilities\Colliders\CapsuleColliderUtility.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\PlayerDashingState.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\ScriptableObjects\PlayerMovementSO.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\PlayerStateReusableData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Moving\PlayerWalkData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Landing\PlayerRollData.cs" />
+    <Compile Include="Assets\Scripts\Utilities\LookAt\LookAtUtility.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Stopping\PlayerMediumStopData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Stopping\PlayerLightStoppingState.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Airborne\PlayerFallData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\PlayerDashData.cs" />
+    <Compile Include="Assets\Scripts\VRM\BoneLookAt.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\IState.cs" />
+    <Compile Include="Assets\Scripts\Data\Colliders\CapsuleColliderData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Moving\PlayerRunningState.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Utilities\Animations\PlayerAnimationEventTrigger.cs" />
+    <Compile Include="Assets\Scripts\Data\Colliders\DefaultColliderData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Moving\PlayerRunData.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Data\Colliders\PlayerTriggerColliderData.cs" />
+    <Compile Include="Assets\Scripts\VRM\Look.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Utilities\Input\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\StateMachines\Movement\States\Grounded\Moving\PlayerWalkingState.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Airborne\PlayerAirborneData.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Data\States\Grounded\Moving\PlayerSprintData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\SimplestarGame\SimpleURPToonLitOutlineExample\Resources\SimpleURPToonLitOutlineExample\SimpleURPToonLitOutlineExample_LightingEquation.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon.shader" />
+    <None Include="Assets\SimplestarGame\SimpleURPToonLitOutlineExample\Resources\SimpleURPToonLitOutlineExample\SimpleURPToonLitOutlineExample_Shared.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_attribute.hlsl" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_vertex.hlsl" />
+    <None Include="Assets\SimplestarGame\SimpleURPToonLitOutlineExample\Resources\SimpleURPToonLitOutlineExample\SimpleURPToonLitOutlineExample.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_uv.hlsl" />
     <None Include="Assets\VRMShaders\GLTF\IO\Resources\UniGLTF\NormalMapExporter.shader" />
+    <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_depthnormals_fragment.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_lighting_mtoon.hlsl" />
+    <None Include="Assets\Fantasy Skybox FREE\ReleaseNotes.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_shadowcaster_vertex.hlsl" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_forward_vertex.hlsl" />
     <None Include="Assets\VRMShaders\GLTF\IO\Resources\UniGLTF\StandardMapExporter.shader" />
@@ -129,15 +145,31 @@
     <None Include="Assets\Materials\Kenney_prototype-textures\License.txt" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_alpha.hlsl" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_input.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_lighting_unity.hlsl" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_depthonly_fragment.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_depthonly_vertex.hlsl" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_utility.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\VRMShaders\GLTF\IO\Resources\UniGLTF\StandardMapImporter.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\SimplestarGame\SimpleURPToonLitOutlineExample\Resources\Unity-Technologies\ShaderGraph-Custom-Lighting\Includes\CustomLighting.hlsl" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_render_pipeline.hlsl" />
     <None Include="Assets\VRMShaders\GLTF\UniUnlit\Resources\UniGLTF\UniUnlit.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_normal.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_shadowcaster_fragment.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_define.hlsl" />
   </ItemGroup>
   <ItemGroup>
@@ -762,8 +794,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>H:\program\unity\Unity\2022.3.8f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
@@ -774,8 +812,14 @@
     <Reference Include="Unity.Formats.Fbx.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
@@ -783,11 +827,17 @@
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Formats.Fbx.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -798,8 +848,20 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
@@ -812,6 +874,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -830,6 +895,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -858,8 +926,17 @@
     <Reference Include="Autodesk.Fbx.Editor">
       <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>

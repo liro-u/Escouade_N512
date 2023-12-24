@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Environement
   - GroundCheck
-  - 
-  - 
+  - LookAtCollider
+  - LookFromCollider
   - 
   - 
   - 

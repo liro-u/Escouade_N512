@@ -25,12 +25,12 @@ namespace MovementSystem
 
             UpdateCameraRecenteringState(stateMachine.ReusableData.MovementInput);
 
-            if (stateMachine.ReusableData.LastTimePressingJump.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingJump < stateMachine.Player.Data.AirborneData.JumpData.jumpBufferTime)
+            if (stateMachine.ReusableData.LastTimePressingJump.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingJump < stateMachine.Player.MovementData.AirborneData.JumpData.jumpBufferTime)
             {
                 stateMachine.ChangeState(stateMachine.JumpingState);
             }
 
-            if (stateMachine.ReusableData.LastTimePressingDash.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingDash < stateMachine.Player.Data.GroundedData.DashData.dashBufferTime)
+            if (stateMachine.ReusableData.LastTimePressingDash.HasValue && Time.time - stateMachine.ReusableData.LastTimePressingDash < stateMachine.Player.MovementData.GroundedData.DashData.dashBufferTime)
             {
                 ChangeToDash();
             }

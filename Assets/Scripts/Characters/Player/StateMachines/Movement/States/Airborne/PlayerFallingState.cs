@@ -100,7 +100,7 @@ namespace MovementSystem
         {
             base.OnJumpStarted(context);
 
-            if (Time.time - stateMachine.ReusableData.LastTimeLeavingGround < stateMachine.Player.Data.AirborneData.JumpData.coyoteTime)
+            if (Time.time - stateMachine.ReusableData.LastTimeLeavingGround < stateMachine.Player.MovementData.AirborneData.JumpData.coyoteTime)
             {
                 stateMachine.ChangeState(stateMachine.JumpingState);
             }

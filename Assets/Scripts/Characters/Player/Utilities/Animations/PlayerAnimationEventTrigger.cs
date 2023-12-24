@@ -11,7 +11,7 @@ namespace MovementSystem
 
         private void Awake()
         {
-            player = transform.parent.GetComponent<Player>();
+            player = transform.parent.parent.GetComponent<Player>();
         }
 
         public void TriggerOnMovementStateAnimationEnterEvent()

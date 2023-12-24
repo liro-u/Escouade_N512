@@ -6,6 +6,7 @@ namespace MovementSystem
 {
     public class PlayerLightLandingState : PlayerLandingState
     {
+        protected bool hasJustEnterState = true;
         public PlayerLightLandingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
         }
@@ -13,6 +14,8 @@ namespace MovementSystem
         #region IState Methods
         public override void Enter()
         {
+            hasJustEnterState = true;
+
             stateMachine.ReusableData.MovementSpeedModifier = 0f;
 
             base.Enter();
@@ -22,6 +25,13 @@ namespace MovementSystem
 
         public override void Update()
         {
+            if (hasJustEnterState)
+            {
+                hasJustEnterState = false;
+
+                return;
+            }
+
             base.Update();
 
             if (stateMachine.ReusableData.MovementInput == Vector2.zero)
