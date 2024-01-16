@@ -34,7 +34,7 @@ namespace MovementSystem
         #region IState Methods
         public virtual void Enter() 
         {
-            Debug.Log("State: " + GetType().Name);
+            // Debug.Log("State: " + GetType().Name);
 
             AddInputActionsCallbacks();
         }
@@ -106,7 +106,7 @@ namespace MovementSystem
 
         private void Move()
         {
-            if (stateMachine.ReusableData.MovementInput == Vector2.zero || stateMachine.ReusableData.MovementSpeedModifier == 0f)
+            if (stateMachine.ReusableData.MovementInput == Vector2.zero)
             {
                 return;
             }
@@ -117,9 +117,18 @@ namespace MovementSystem
 
             Vector3 targetRotationDirection = GetTargetRotationDirection(targetRotationYAngle);
 
-            float movementSpeed = GetMovementSpeed();
-
             Vector3 currentPlayerHorizontalVelocity = GetPlayerHorizontalVelocity();
+
+            float movementSpeed;
+
+            if (stateMachine.ReusableData.MovementSpeedModifier == 0f)
+            {
+                movementSpeed = currentPlayerHorizontalVelocity.magnitude;
+            }
+            else
+            {
+                movementSpeed = GetMovementSpeed();
+            }
 
             stateMachine.Player.Rigidbody.AddForce(movementSpeed * targetRotationDirection - currentPlayerHorizontalVelocity, ForceMode.VelocityChange);
         }
@@ -194,6 +203,7 @@ namespace MovementSystem
 
         protected Vector3 GetMovementInputDirection()
         {
+
             return new Vector3(stateMachine.ReusableData.MovementInput.x, 0f, stateMachine.ReusableData.MovementInput.y);
         }
 
@@ -340,7 +350,7 @@ namespace MovementSystem
             stateMachine.ReusableData.TimeToReachTargetRotation = stateMachine.ReusableData.RotationData.TargetRotationReachTime;
         }
 
-        protected void SetBaseRotationData()
+        protected virtual void SetBaseRotationData()
         {
             SetRotationData(movementData.BaseRotationData);
         }

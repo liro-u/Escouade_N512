@@ -98,7 +98,6 @@ namespace MovementSystem
                 Vector3 liftForce = new Vector3(0f, amountToLift, 0f);
 
                 stateMachine.Player.Rigidbody.AddForce(liftForce, ForceMode.VelocityChange);
-
             }
         }
 

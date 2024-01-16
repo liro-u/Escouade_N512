@@ -8,7 +8,6 @@ namespace MovementSystem
     [Serializable]
     public class PlayerJumpData 
     {
-        [field: SerializeField] public PlayerRotationData RotationData { get; private set; }
         [field: SerializeField][field: Range(0f, 5f)] public float JumpToGroundRayDistance { get; private set; } = 2f;
         [field: SerializeField] public AnimationCurve HorizontalJumpForceModifierOnSlopeUpwards { get; private set; }
         [field: SerializeField] public AnimationCurve VerticalJumpForceModifierOnSlopeUpwards { get; private set; }

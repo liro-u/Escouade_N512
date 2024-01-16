@@ -231,7 +231,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""339aaeb0-c7b7-4d73-b585-6438f249e222"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=10,y=10)"",
+                    ""processors"": ""ScaleVector2(x=20,y=10)"",
                     ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": true,

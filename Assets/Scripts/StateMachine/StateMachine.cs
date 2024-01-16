@@ -8,6 +8,11 @@ namespace MovementSystem
     {
         protected IState currentState;
 
+        public IState getCurrentState()
+        {
+            return currentState;
+        }
+
         public void ChangeState(IState newState)
         {
             currentState?.Exit();

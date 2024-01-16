@@ -152,6 +152,11 @@ namespace MovementSystem
         {
             shouldKeepRotating = true;
         }
+
+        protected override void OnJumpStarted(InputAction.CallbackContext context)
+        {
+            stateMachine.ReusableData.LastTimePressingJump = Time.time;
+        }
         #endregion
     }
 }

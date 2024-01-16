@@ -19,12 +19,16 @@ namespace MovementSystem
 
             base.Enter();
 
+            SetRotationData(airborneData.BaseRotationData);
+
             ResetSprintState();
         }
 
         public override void Exit()
         {
             base.Exit();
+
+            SetBaseRotationData();
 
             StopAnimation(stateMachine.Player.AnimationData.AirborneParameterHash);
         }

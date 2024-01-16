@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 013e830f253610d4b9536437dee4356a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ivy_mat.001
+    second: {fileID: 2100000, guid: b74d023cc3a50eb49a74720b29c82dda, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc45016b844e7624dae3aec10fb443ea, type: 3}
+  reverseAxis: 0
+  renderPipeline: 0

@@ -35,8 +35,6 @@ namespace MovementSystem
 
             shouldKeepRotating = stateMachine.ReusableData.MovementInput != Vector2.zero;
 
-            SetRotationData(jumpData.RotationData);
-
             Jump();
         }
 
@@ -45,8 +43,6 @@ namespace MovementSystem
             base.Exit();
 
             stateMachine.ReusableData.VerticalMovementDecelerationForceEnabled = true;
-
-            SetBaseRotationData();
 
             canStartFalling = false;
         }

@@ -61,6 +61,12 @@ namespace MovementSystem
         #region Input Methods
         protected override void OnJumpStarted(InputAction.CallbackContext context)
         {
+            stateMachine.ReusableData.LastTimePressingJump = Time.time;
+        }
+
+        protected override void OnDashStarted(InputAction.CallbackContext context)
+        {
+            stateMachine.ReusableData.LastTimePressingDash = Time.time;
         }
         #endregion
     }

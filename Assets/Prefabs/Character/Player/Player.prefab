@@ -5548,7 +5548,7 @@ GameObject:
   - component: {fileID: 7269361126182435319}
   - component: {fileID: 3807740495787395843}
   - component: {fileID: 7739098388165410017}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: LookAtCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6067,13 +6067,22 @@ Animator:
   m_GameObject: {fileID: 6828912219047300884}
   m_Enabled: 1
   m_Avatar: {fileID: -7015762578403652589, guid: 5ca2f66e68c1d474b80f471c2366e2f2, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52300e5ebba095b4b8f3ddb8c079c99a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'J_Bip_R_Ring2'\n\tTransform 'J_Bip_R_UpperLeg'\n\tTransform
+    'J_Bip_C_UpperChest'\n\tTransform 'J_Bip_R_LowerArm'\n\tTransform 'J_Bip_L_Middle2'\n\tTransform
+    'J_Bip_C_Neck'\n\tTransform 'J_Bip_L_UpperLeg'\n\tTransform 'J_Bip_L_Index1'\n\tTransform
+    'J_Bip_R_Little2'\n\tTransform 'J_Bip_R_UpperArm'\n\tand more ...\n\tFrom animation
+    clip 'Idle'\n\tFrom animation clip 'Dash'\n\tFrom animation clip 'Run'\n\tFrom
+    animation clip 'Sprint'\n\tFrom animation clip 'Walk'\n\tFrom animation clip
+    'HardLanding'\n\tFrom animation clip 'LightLanding'\n\tFrom animation clip 'Roll'\n\tFrom
+    animation clip 'HardStop'\n\tFrom animation clip 'LightStop'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -6642,7 +6651,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3202218576291291384}
-  m_Layer: 0
+  - component: {fileID: 5228099552311194562}
+  m_Layer: 8
   m_Name: CameraLookPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -6664,6 +6674,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2947433331643341339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5228099552311194562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055591625673114862}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 1.5, z: 0.3}
+  m_Center: {x: 0, y: -0.7, z: 0}
 --- !u!1 &7126790247256581483
 GameObject:
   m_ObjectHideFlags: 0
